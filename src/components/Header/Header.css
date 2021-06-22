@@ -1,0 +1,28 @@
+.header {
+  height: 100px;
+  width: 100vw;
+  border-bottom: 1px solid #e1e1e1;
+  overflow: hidden;
+  background-color: #201e1f;
+  position: relative;
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100% - 20px;
+  flex: 1;
+  margin: 0 20px;
+}
+
+.header__logo {
+  flex: 0.15;
+}
+
+.header__logo > img {
+  width: 150px;
+  height: 70px;
+  margin: 15px 0;
+  object-fit: cover;
+}

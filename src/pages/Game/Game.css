@@ -1,0 +1,114 @@
+.game {
+  flex: 1;
+  padding: 20px;
+  width: 100%;
+  min-height: 100%;
+  cursor: url("https://uploads.codesandbox.io/uploads/user/b3e56831-8b98-4fee-b941-0e27f39883ab/Ad1_-cursor.png")
+      39 39,
+    auto;
+}
+
+.game__container {
+  display: flex;
+  align-items: flex-start;
+}
+
+.players__container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 80vw;
+}
+
+.deck__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  right: 20px;
+}
+
+.player__container {
+  padding: 10px;
+  margin: 0 5px;
+  margin-bottom: 15px;
+  min-width: 45%;
+  min-height: 40vh;
+}
+
+.currentPlaying {
+  border: 2px solid white;
+  border-radius: 12px;
+}
+
+.cards__row {
+  display: flex;
+  align-items: center;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.align__right {
+  flex-direction: row-reverse;
+}
+
+.bottom__leftContainer,
+.bottom__rightContainer {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.card {
+  width: 150px;
+  height: 200px;
+  background-color: white;
+  border: 1px solid rgb(90, 87, 87);
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  font-weight: 500;
+  position: relative;
+  margin: 5px;
+  text-align: center;
+}
+
+.card::before,
+.card::after {
+  position: absolute;
+  content: attr(data-value);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.card::before {
+  top: 0.5rem;
+  left: 0.5rem;
+}
+
+.card::after {
+  bottom: 0.5rem;
+  right: 0.5rem;
+  transform: rotate(180deg);
+}
+
+.card.red {
+  color: red;
+}
+
+.card.black {
+  color: black;
+}
+
+.deckLength__text {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #222;
+}
