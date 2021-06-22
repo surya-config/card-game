@@ -8,7 +8,7 @@ import { IconButton } from "@material-ui/core";
 
 function Home() {
   const history = useHistory();
-  const [numberOfPlayers, setNumberOfPlayers] = useState(0);
+  const [numberOfPlayers, setNumberOfPlayers] = useState(2);
 
   return (
     <div className="home">
@@ -18,13 +18,17 @@ function Home() {
         <div className="addPlayers">
           <IconButton
             onClick={() =>
-              numberOfPlayers > 0 && setNumberOfPlayers(numberOfPlayers - 1)
+              numberOfPlayers > 2 && setNumberOfPlayers(numberOfPlayers - 1)
             }
           >
             <RemoveIcon style={{ fill: "white", fontSize: 40 }} />
           </IconButton>
           <h1 className="players__count">{numberOfPlayers}</h1>
-          <IconButton onClick={() => setNumberOfPlayers(numberOfPlayers + 1)}>
+          <IconButton
+            onClick={() =>
+              numberOfPlayers < 5 && setNumberOfPlayers(numberOfPlayers + 1)
+            }
+          >
             <AddIcon style={{ fill: "white", fontSize: 40 }} />
           </IconButton>
         </div>
