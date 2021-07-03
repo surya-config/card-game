@@ -269,13 +269,10 @@ function Game() {
       if (tempWinner.length === 0) {
         // Get the players whose cards are in sequential order.
         tempWinner = players.filter((player) => player.sequential === true);
-        console.log("Sequential : ", tempWinner);
+
         if (tempWinner.length === 0) {
-          console.log("3");
           // Get the players who has two pairs of cards with same value.
           tempWinner = players.filter((player) => player.pair === true);
-          console.log("Pair : ", tempWinner);
-
           if (tempWinner.length === 1) {
             setWinner(tempWinner[0]);
             setWinStatus("Pair of Same Card Values");
@@ -284,16 +281,12 @@ function Game() {
           }
         } else if (tempWinner.length === 1) {
           setWinner(tempWinner[0]);
-          // alert(
-          //   "Its a Tie! Pick one card on each side to determine the winner."
-          // );
           setWinStatus("Card Sequence");
         } else {
           evaluateTopCard(tempWinner);
         }
       } else if (tempWinner.length === 1) {
         setWinner(tempWinner[0]);
-        // alert(`${tempWinner[0].name} wins`);
         setWinStatus("Same three cards");
       } else if (tempWinner.length > 1) {
         evaluateTopCard(tempWinner);
@@ -302,8 +295,6 @@ function Game() {
       evaluateTopCard();
     }
   };
-
-  console.log({ winner });
 
   return (
     <div className="game">
